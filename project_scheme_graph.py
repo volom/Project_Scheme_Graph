@@ -84,7 +84,7 @@ class ProjectSchemeGraph:
                 df_edges = pd.DataFrame()
                 df_edges['1_edge'] = [x[0] for x in self.__make_edges()]
                 df_edges['2_edge'] = [x[1] for x in self.__make_edges()]
-                df_edges.to_csv(f"p_{re.search(r'(.*/)(.*)', self.project_path).group(2)}_scheme.xlsx", index=False)
+                df_edges.to_excel(f"p_{re.search(r'(.*/)(.*)', self.project_path).group(2)}_scheme.xlsx", index=False)
             elif save_format == 'json':
                 json_edges = {}
                 for i in self.__make_edges():
